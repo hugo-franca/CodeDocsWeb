@@ -1,0 +1,462 @@
+/*
+  CARDS
+*/
+div.card-body
+{
+  font-size:20px;
+}
+
+/*
+  Secao de comandos do usuario na instalacao
+*/
+.usercommand {
+  background-color: #f7f7f7;
+  border:1px solid #000000;
+  width: fit-content;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 30px;
+}
+
+/*
+  Secao de codigo fonte
+*/
+pre.code {
+  white-space: pre-line;
+  width: fit-content;
+}
+pre.code::before {
+  counter-reset: listing;
+}
+pre.code code {
+  counter-increment: listing;
+}
+pre.code code::before {
+  content: counter(listing) ". ";
+  /*display: inline-block;*/
+  /*width: 8em;         */
+  padding-left: auto;   
+  margin-left: auto;  
+  text-align: left;  
+}
+
+
+pre, code { font-size:16px; }
+/*tt { font-size: 1.2em; }*/
+pre { margin:0px 0px 0px; }
+pre.code { margin-left:50px;padding:10px; border:1px solid #000000; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+pre.code code::before { 
+  border-left: 1px;
+}
+
+@media print { pre.code, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+span.codetooltip
+{
+  background-color: #9bd0b7;
+}
+span.codetooltip:hover
+{
+  background-color: #AFCBFF;
+}
+
+
+/*!
+ * Start Bootstrap - Shop Item (https://startbootstrap.com/template-overviews/shop-item)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-shop-item/blob/master/LICENSE)
+ */
+body {
+  padding-top: 56px;
+}
+
+.img_superficies {
+	width: 80%;
+  object-fit: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.gif_superficies {
+	width: 80%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.list-group-item {
+	background-color: #F7F7F7;
+	color: #000000;
+}
+
+.nomes{
+  padding-left: 30px;
+}
+
+.column {
+  float: left;
+  width: 50.0%;
+  padding: 5px;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* Clear floats after image containers */
+.row::after {
+  text-align: center;
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.caption {
+    display: block;
+}
+
+p {
+	text-align: justify;
+  text-indent: 30px;
+}
+
+
+/** {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}*/
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+/*.text {
+  color: #000000;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}*/
+
+/* Number text (1/3 etc) */
+/*.numbertext {
+  color: #000000;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 0px;
+  text-align: center;
+}*/
+
+.numbertext {
+  color: #000000;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/*.active, .dot:hover {
+  background-color: #717171;
+}
+*/
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+
+
+
+
+
+
+
+
+
+/* === SIDE BAR ====*/
+/*.navlink,
+.navlink:hover,
+.navlink:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}*/
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.container2{
+  /*margin-right: 0px;*/
+  /*margin-left: 0px;*/
+  float: right;
+  width: 100%;
+  /*padding-left: 0px;*/
+  /*position: relative;*/
+  /*padding-right: 0px;*/
+}
+
+.lado-direito {
+  width: 80%;
+  margin-right: 1%;
+  margin-left: 1%;
+  float: right;
+}
+
+.nav-sidebar{
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    overflow-y: auto;  /* Add overflow-y */
+      overflow-x: hidden;  /* Add overflow-x */
+}
+
+#sidebar {
+    /*width: 250px;*/
+    width: 15%;
+    position: fixed;
+    /*top: 0;*/
+    left: 0;
+    /*height: 100vh;*/
+    z-index: 999;
+    /*background: #7386D5;*/
+    /*color: #fff;*/
+    transition: all 0.3s;
+}
+
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+    margin-top: 40px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: #F7F7F7;
+    border: 1px solid #000000;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    /*border-bottom: 1px solid #47748b;*/
+    /*border-right: 1px solid #47748b;*/
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+/*Cada um dos itens inactives*/
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    color: #000000;
+}
+
+#sidebar ul li a:hover {
+    color: #7386D5;
+    background: #fff;
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    /*color: #fff;*/
+    background: #F7F7F7;
+    /*border: 1px solid #000000;*/
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+/*Sub-itens*/
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 20px !important;
+    margin-left: 20px;
+    /*background: #6d7fcc;*/
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.download {
+    background: #fff;
+    /*color: #7386D5;*/
+}
+
+a.article,
+a.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: calc(100% - 250px);
+    padding: 40px;
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#content.active {
+    width: 100%;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #content {
+        width: 100%;
+    }
+    #content.active {
+        width: calc(100% - 250px);
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}

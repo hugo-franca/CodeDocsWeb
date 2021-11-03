@@ -1,0 +1,181 @@
+<code>OUTPUT vtk=[<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='How often (in timesteps) a VTK file will be printed with all the properties on the whole mesh. This file can be really large for extremely fine meshes, be careful.
+'>0</span> <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='How often (in timesteps) a VTK file will be printed with the free-surface interface. Ignored in simulations with no interface.
+'>500</span>] backup=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='This is for debugging only. Keep this as 0 if you are unsure. This property prints a save-state file every few timesteps. A simulation can be later restarted from this state, instead of re-running from the beginning.
+'>0</span> print=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='How often (in timesteps) a string with some information will be printed to stdout.
+'>100</span> pasta=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The name of the folder in which the VTK files will be saved. Some tags can be used in this string.
+'>dropletOrifice-M[minDxDy]dt[dt]-Re[Re]Wi[We]beta[beta]Fr[Froude]Weber[Weber]</span></code>
+<code><span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The coordinate system in the simulation. Do not change this property for now. In the future an axisymmetric option will be implemented as well.
+'>CARTESIANO</span></code>
+<code>Nt <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The total number of timesteps for the simulation. The timestep size will be calculated as dt = tMax/Nt.
+'>50000</span></code>
+<code>xMin <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The minimum value of x for the domain bounding rectangle.
+'>-2.0</span></code>
+<code>xMax <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The maximum value of x for the domain bounding rectangle.
+'>2.0</span></code>
+<code>yMin <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The minimum value of y for the domain bounding rectangle.
+'>-6.0</span></code>
+<code>yMax <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The maximum value of y for the domain bounding rectangle.
+'>1.5</span></code>
+<code>tMax <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The final time of the simulation. The timestep size will be calculated as dt = tMax/Nt.
+'>50</span></code>
+<code>Re <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The Reynolds number for the simulation.
+'>10</span></code>
+<code>Fr <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The Froude number for the simulation.
+'>9.207894499</span> grav=[<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The x-component for the gravity vector.
+'>0</span> <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The y-component for the gravity vector.
+'>-1</span>]</code>
+<code>param_visco Wi=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The Weissenberg number for viscoelastic simulations.
+'>1</span> beta=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The viscosity ratio for viscoelastic simulations. Use beta=1 for newtonian.
+'>1</span> alpha=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The additional parameter for the viscoelastic Giesekus model.
+'>0</span> epsilon=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The additional parameter for the viscoelastic PTT model.
+'>0</span></code>
+<code>formulacao_visco <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The viscoelastic formulation to be used. Either CSF or NSF. Choose CSF if you&#39re unsure.
+'>CSF</span></code>
+<code>tolNSF <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The first tolerance for the NSF formulation. This is ignored if you chose CSF on the line above.
+'>0</span> <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The second tolerance for the NSF formulation. This is ignored if you chose CSF on the line above.
+'>0</span> <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The third tolerance for the NSF formulation. This is ignored if you chose CSF on the line above.
+'>1</span></code>
+<code>tensao_superficial ligado=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='Determines if surface tension will be used or not. Either sim or nao. This is ignored for simulations with no free-surface.
+'>sim</span> Weber=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The Weber number. Only used in simulations with free-surface.
+'>50</span> tsur=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='How often (in timesteps) the TSUR algorithm will be applied. Higher values mean TSUR will be apllied LESS frequently.
+'>1</span></code>
+<code>VEL_INICIAL [<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The x-component for the initial velocity. The entire fluid domain is initialized with this.
+'>0.0</span> <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The y-component for the initial velocity. The entire fluid domain is initialized with this.
+'>-1.0</span>]</code>
+<code>MALHA_EIXO_X tipo=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='Indicates that a non-uniform stretching discretization will be used for this coordinate.
+'>geometrico</span> vertices=(<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The vertices for this stretching discretization. Read the explanation above for more details.
+'>-2.0 -0.25 0.25 2.0</span>) param_stretching=([<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The parameters to be used in one of the stretching subgroups.
+'>140 0.0125 -1</span>] [<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The parameters to be used in one of the stretching subgroups.
+'>40 0.0125 1</span>] [<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The parameters to be used in one of the stretching subgroups.
+'>140 0.0125 1</span>])</code>
+<code>MALHA_EIXO_Y tipo=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='Indicates that a non-uniform stretching discretization will be used for this coordinate.
+'>geometrico</span> vertices=(<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The vertices for this stretching discretization. Read the explanation above for more details.
+'>-6.0 -0.25 0.0 1.5</span>) param_stretching=([<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The parameters to be used in one of the stretching subgroups.
+'>460 0.0125 -1</span>] [<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The parameters to be used in one of the stretching subgroups.
+'>20 0.0125 -1</span>] [<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The parameters to be used in one of the stretching subgroups.
+'>120 0.0125 1</span>])</code>
+<code>BOUNDARY id=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='An ID number that identifies this boundary. Each boundary should have a unique ID.
+'>0</span> direcao=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='Either horizontal or vertical. Each boundary is either a horizontal or vertical straight line, as indicated by this property.
+'>horizontal</span> posicao=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The position of this boundary line. In this case we have a horizontal line, so this position corresponds to the $y$-coordinate of this line.
+'>0.0</span> inicio=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The initial limit of this boundary line segment. In this case we have a horizontal line, so this position correspods to the minimum value of $x$ in the line segment.
+'>-2.0</span> fim=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The final limit of this boundary line segment. In this case we have a horizontal line, so this position correspods to the minimum value of $x$ in the line segment.
+'>-0.25</span> tipo=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The type of boundary condition to be applied at this line segment. Can be either NOSLIP, INFLOW or NEUMANN.
+'>NOSLIP</span> movimento=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='Indicates if this NOSLIP boundary moves or not. Keep it as SEM_MOVIMENTO for now. An example with movement will be added in the future.
+'>SEM_MOVIMENTO</span></code>
+<code>BOUNDARY id=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='An ID number that identifies this boundary. Each boundary should have a unique ID.
+'>1</span> direcao=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='Either horizontal or vertical. Each boundary is either a horizontal or vertical straight line, as indicated by this property.
+'>horizontal</span> posicao=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The position of this boundary line. In this case we have a horizontal line, so this position corresponds to the $y$-coordinate of this line.
+'>-0.25</span> inicio=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The initial limit of this boundary line segment. In this case we have a horizontal line, so this position correspods to the minimum value of $x$ in the line segment.
+'>-2.0</span> fim=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The final limit of this boundary line segment. In this case we have a horizontal line, so this position correspods to the minimum value of $x$ in the line segment.
+'>-0.25</span> tipo=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The type of boundary condition to be applied at this line segment. Can be either NOSLIP, INFLOW or NEUMANN.
+'>NOSLIP</span> movimento=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='Indicates if this NOSLIP boundary moves or not. Keep it as SEM_MOVIMENTO for now. An example with movement will be added in the future.
+'>SEM_MOVIMENTO</span></code>
+<code>BOUNDARY id=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='An ID number that identifies this boundary. Each boundary should have a unique ID.
+'>2</span> direcao=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='Either horizontal or vertical. Each boundary is either a horizontal or vertical straight line, as indicated by this property.
+'>vertical</span> posicao=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The position of this boundary line. In this case, we have a vertical line, so this position corresponds to the $x$-coordinate of this line.
+'>-2.0</span> inicio=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The initial limit of this boundary line segment. In this case we have a vertical line, so this position correspods to the minimum value of $y$ in the line segment.
+'>-0.25</span> fim=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The final limit of this boundary line segment. In this case we have a vertical line, so this position correspods to the minimum value of $y$ in the line segment.
+'>0.0</span> tipo=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The type of boundary condition to be applied at this line segment. Can be either NOSLIP, INFLOW or NEUMANN.
+'>NOSLIP</span> movimento=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='Indicates if this NOSLIP boundary moves or not. Keep it as SEM_MOVIMENTO for now. An example with movement will be added in the future.
+'>SEM_MOVIMENTO</span></code>
+<code>BOUNDARY id=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='An ID number that identifies this boundary. Each boundary should have a unique ID.
+'>3</span> direcao=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='Either horizontal or vertical. Each boundary is either a horizontal or vertical straight line, as indicated by this property.
+'>vertical</span> posicao=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The position of this boundary line. In this case, we have a vertical line, so this position corresponds to the $x$-coordinate of this line.
+'>-0.25</span> inicio=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The initial limit of this boundary line segment. In this case we have a vertical line, so this position correspods to the minimum value of $y$ in the line segment.
+'>-0.25</span> fim=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The final limit of this boundary line segment. In this case we have a vertical line, so this position correspods to the minimum value of $y$ in the line segment.
+'>0.0</span> tipo=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The type of boundary condition to be applied at this line segment. Can be either NOSLIP, INFLOW or NEUMANN.
+'>NOSLIP</span> movimento=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='Indicates if this NOSLIP boundary moves or not. Keep it as SEM_MOVIMENTO for now. An example with movement will be added in the future.
+'>SEM_MOVIMENTO</span></code>
+<code>BOUNDARY id=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='An ID number that identifies this boundary. Each boundary should have a unique ID.
+'>4</span> direcao=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='Either horizontal or vertical. Each boundary is either a horizontal or vertical straight line, as indicated by this property.
+'>horizontal</span> posicao=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The position of this boundary line. In this case we have a horizontal line, so this position corresponds to the $y$-coordinate of this line.
+'>0.0</span> inicio=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The initial limit of this boundary line segment. In this case we have a horizontal line, so this position correspods to the minimum value of $x$ in the line segment.
+'>0.25</span> fim=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The final limit of this boundary line segment. In this case we have a horizontal line, so this position correspods to the minimum value of $x$ in the line segment.
+'>2.0</span> tipo=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The type of boundary condition to be applied at this line segment. Can be either NOSLIP, INFLOW or NEUMANN.
+'>NOSLIP</span> movimento=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='Indicates if this NOSLIP boundary moves or not. Keep it as SEM_MOVIMENTO for now. An example with movement will be added in the future.
+'>SEM_MOVIMENTO</span></code>
+<code>BOUNDARY id=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='An ID number that identifies this boundary. Each boundary should have a unique ID.
+'>5</span> direcao=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='Either horizontal or vertical. Each boundary is either a horizontal or vertical straight line, as indicated by this property.
+'>horizontal</span> posicao=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The position of this boundary line. In this case we have a horizontal line, so this position corresponds to the $y$-coordinate of this line.
+'>-0.25</span> inicio=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The initial limit of this boundary line segment. In this case we have a horizontal line, so this position correspods to the minimum value of $x$ in the line segment.
+'>0.25</span> fim=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The final limit of this boundary line segment. In this case we have a horizontal line, so this position correspods to the minimum value of $x$ in the line segment.
+'>2.0</span> tipo=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The type of boundary condition to be applied at this line segment. Can be either NOSLIP, INFLOW or NEUMANN.
+'>NOSLIP</span> movimento=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='Indicates if this NOSLIP boundary moves or not. Keep it as SEM_MOVIMENTO for now. An example with movement will be added in the future.
+'>SEM_MOVIMENTO</span></code>
+<code>BOUNDARY id=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='An ID number that identifies this boundary. Each boundary should have a unique ID.
+'>6</span> direcao=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='Either horizontal or vertical. Each boundary is either a horizontal or vertical straight line, as indicated by this property.
+'>vertical</span> posicao=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The position of this boundary line. In this case, we have a vertical line, so this position corresponds to the $x$-coordinate of this line.
+'>0.25</span> inicio=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The initial limit of this boundary line segment. In this case we have a vertical line, so this position correspods to the minimum value of $y$ in the line segment.
+'>-0.25</span> fim=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The final limit of this boundary line segment. In this case we have a vertical line, so this position correspods to the minimum value of $y$ in the line segment.
+'>0.0</span> tipo=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The type of boundary condition to be applied at this line segment. Can be either NOSLIP, INFLOW or NEUMANN.
+'>NOSLIP</span> movimento=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='Indicates if this NOSLIP boundary moves or not. Keep it as SEM_MOVIMENTO for now. An example with movement will be added in the future.
+'>SEM_MOVIMENTO</span></code>
+<code>BOUNDARY id=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='An ID number that identifies this boundary. Each boundary should have a unique ID.
+'>7</span> direcao=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='Either horizontal or vertical. Each boundary is either a horizontal or vertical straight line, as indicated by this property.
+'>vertical</span> posicao=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The position of this boundary line. In this case, we have a vertical line, so this position corresponds to the $x$-coordinate of this line.
+'>2.0</span> inicio=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The initial limit of this boundary line segment. In this case we have a vertical line, so this position correspods to the minimum value of $y$ in the line segment.
+'>-0.25</span> fim=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The final limit of this boundary line segment. In this case we have a vertical line, so this position correspods to the minimum value of $y$ in the line segment.
+'>0.0</span> tipo=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The type of boundary condition to be applied at this line segment. Can be either NOSLIP, INFLOW or NEUMANN.
+'>NOSLIP</span> movimento=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='Indicates if this NOSLIP boundary moves or not. Keep it as SEM_MOVIMENTO for now. An example with movement will be added in the future.
+'>SEM_MOVIMENTO</span></code>
+<code>BOUNDARY id=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='An ID number that identifies this boundary. Each boundary should have a unique ID.
+'>8</span> direcao=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='Either horizontal or vertical. Each boundary is either a horizontal or vertical straight line, as indicated by this property.
+'>horizontal</span> posicao=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The position of this boundary line. In this case we have a horizontal line, so this position corresponds to the $y$-coordinate of this line.
+'>1.5</span> inicio=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The initial limit of this boundary line segment. In this case we have a horizontal line, so this position correspods to the minimum value of $x$ in the line segment.
+'>-2</span> fim=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The final limit of this boundary line segment. In this case we have a horizontal line, so this position correspods to the minimum value of $x$ in the line segment.
+'>2</span> tipo=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The type of boundary condition to be applied at this line segment. Can be either NOSLIP, INFLOW or NEUMANN.
+'>NOSLIP</span> movimento=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='Indicates if this NOSLIP boundary moves or not. Keep it as SEM_MOVIMENTO for now. An example with movement will be added in the future.
+'>SEM_MOVIMENTO</span></code>
+<code>BOUNDARY id=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='An ID number that identifies this boundary. Each boundary should have a unique ID.
+'>9</span> direcao=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='Either horizontal or vertical. Each boundary is either a horizontal or vertical straight line, as indicated by this property.
+'>horizontal</span> posicao=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The position of this boundary line. In this case we have a horizontal line, so this position corresponds to the $y$-coordinate of this line.
+'>-6</span> inicio=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The initial limit of this boundary line segment. In this case we have a horizontal line, so this position correspods to the minimum value of $x$ in the line segment.
+'>-2</span> fim=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The final limit of this boundary line segment. In this case we have a horizontal line, so this position correspods to the minimum value of $x$ in the line segment.
+'>2</span> tipo=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The type of boundary condition to be applied at this line segment. Can be either NOSLIP, INFLOW or NEUMANN.
+'>NOSLIP</span> movimento=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='Indicates if this NOSLIP boundary moves or not. Keep it as SEM_MOVIMENTO for now. An example with movement will be added in the future.
+'>SEM_MOVIMENTO</span></code>
+<code>BOUNDARY id=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='An ID number that identifies this boundary. Each boundary should have a unique ID.
+'>10</span> direcao=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='Either horizontal or vertical. Each boundary is either a horizontal or vertical straight line, as indicated by this property.
+'>vertical</span> posicao=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The position of this boundary line. In this case, we have a vertical line, so this position corresponds to the $x$-coordinate of this line.
+'>-2</span> inicio=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The initial limit of this boundary line segment. In this case we have a vertical line, so this position correspods to the minimum value of $y$ in the line segment.
+'>-6</span> fim=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The final limit of this boundary line segment. In this case we have a vertical line, so this position correspods to the minimum value of $y$ in the line segment.
+'>1.5</span> tipo=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The type of boundary condition to be applied at this line segment. Can be either NOSLIP, INFLOW or NEUMANN.
+'>NOSLIP</span> movimento=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='Indicates if this NOSLIP boundary moves or not. Keep it as SEM_MOVIMENTO for now. An example with movement will be added in the future.
+'>SEM_MOVIMENTO</span></code>
+<code>BOUNDARY id=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='An ID number that identifies this boundary. Each boundary should have a unique ID.
+'>11</span> direcao=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='Either horizontal or vertical. Each boundary is either a horizontal or vertical straight line, as indicated by this property.
+'>vertical</span> posicao=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The position of this boundary line. In this case, we have a vertical line, so this position corresponds to the $x$-coordinate of this line.
+'>2</span> inicio=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The initial limit of this boundary line segment. In this case we have a vertical line, so this position correspods to the minimum value of $y$ in the line segment.
+'>-6</span> fim=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The final limit of this boundary line segment. In this case we have a vertical line, so this position correspods to the minimum value of $y$ in the line segment.
+'>1.5</span> tipo=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The type of boundary condition to be applied at this line segment. Can be either NOSLIP, INFLOW or NEUMANN.
+'>NOSLIP</span> movimento=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='Indicates if this NOSLIP boundary moves or not. Keep it as SEM_MOVIMENTO for now. An example with movement will be added in the future.
+'>SEM_MOVIMENTO</span></code>
+<code>REGIAO_LIVRE tipo=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The REGIAO_LIVRE line is used to create a free surface region. This parameter defines which pre-defined shape the region will have, in this case it is an ellipse. More examples will be created later showcasing more shapes.
+'>elipse</span> centro=[<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The two coordinates of the ellipse center.
+'>0.0 0.5</span>] raio=[<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The radiuses of the ellipse.
+'>0.5 0.5</span>] vel=[<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The velocity for the ellipse to be initialized with.
+'>0.0 -1.0</span>]</code>
+<code>REGIAO_PAREDE NumFaces=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The REGIAO_PAREDE line creates a polygon that will be treated as a solid block. No fluid can enter this block. This parameter indicates the number of faces in the polygon.
+'>4</span> faces=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='List of face IDs for this polygon. These IDs should match the ones defined with the boundaries above.
+'>0</span> <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='List of face IDs for this polygon. These IDs should match the ones defined with the boundaries above.
+'>3</span> <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='List of face IDs for this polygon. These IDs should match the ones defined with the boundaries above.
+'>1</span> <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='List of face IDs for this polygon. These IDs should match the ones defined with the boundaries above.
+'>2</span></code>
+<code>REGIAO_PAREDE NumFaces=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The REGIAO_PAREDE line creates a polygon that will be treated as a solid block. No fluid can enter this block. This parameter indicates the number of faces in the polygon.
+'>4</span> faces=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='List of face IDs for this polygon. These IDs should match the ones defined with the boundaries above.
+'>4</span> <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='List of face IDs for this polygon. These IDs should match the ones defined with the boundaries above.
+'>7</span> <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='List of face IDs for this polygon. These IDs should match the ones defined with the boundaries above.
+'>5</span> <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='List of face IDs for this polygon. These IDs should match the ones defined with the boundaries above.
+'>6</span></code>
+<code>BLOCO_PARAVIEW NumFaces=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The REGIAO_PAREDE line creates a polygon that will be treated as a solid block. No fluid can enter this block. This parameter indicates the number of faces in the polygon.
+'>4</span> faces=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='List of face IDs for this polygon. These IDs should match the ones defined with the boundaries above.
+'>0</span> <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='List of face IDs for this polygon. These IDs should match the ones defined with the boundaries above.
+'>3</span> <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='List of face IDs for this polygon. These IDs should match the ones defined with the boundaries above.
+'>1</span> <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='List of face IDs for this polygon. These IDs should match the ones defined with the boundaries above.
+'>2</span></code>
+<code>BLOCO_PARAVIEW NumFaces=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The REGIAO_PAREDE line creates a polygon that will be treated as a solid block. No fluid can enter this block. This parameter indicates the number of faces in the polygon.
+'>4</span> faces=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='List of face IDs for this polygon. These IDs should match the ones defined with the boundaries above.
+'>4</span> <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='List of face IDs for this polygon. These IDs should match the ones defined with the boundaries above.
+'>7</span> <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='List of face IDs for this polygon. These IDs should match the ones defined with the boundaries above.
+'>5</span> <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='List of face IDs for this polygon. These IDs should match the ones defined with the boundaries above.
+'>6</span></code>

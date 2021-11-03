@@ -1,0 +1,22 @@
+OUTPUT vtk=[1000 0] backup=0 print=1 pasta=folderChannelFlow
+CARTESIANO
+Nt 100000
+xMin 0.0
+xMax 5.0
+yMin 0.0
+yMax 1.0
+tMax 10.0
+Re 0.01
+Fr 14.27843123 grav=[0.0 -1.0]
+param_visco Wi=1.0 beta=0.111111 alpha=0.0 epsilon=0.0
+FORMULACAO_VISCO CSF
+tolNSF 1e-6 0.000000e+000 1
+tensao_superficial ligado=nao Weber=100.0 tsur=1
+VEL_INICIAL [0.0 0.0]
+MALHA_EIXO_X tipo=uniforme N=100
+MALHA_EIXO_Y tipo=uniforme N=20
+BOUNDARY id=0 direcao=vertical posicao=0 inicio=0 fim=1 tipo=INFLOW perfil=parabolico valorDirichlet=1.5
+BOUNDARY id=1 direcao=vertical posicao=5 inicio=0 fim=1 tipo=NEUMANN
+BOUNDARY id=2 direcao=horizontal posicao=0 inicio=0 fim=5 tipo=NOSLIP movimento=SEM_MOVIMENTO
+BOUNDARY id=3 direcao=horizontal posicao=1 inicio=0 fim=5 tipo=NOSLIP movimento=SEM_MOVIMENTO
+REGIAO tipo=FULL numFaces=4 faces=0 1 2 3

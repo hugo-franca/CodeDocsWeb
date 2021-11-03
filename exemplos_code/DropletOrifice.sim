@@ -1,0 +1,34 @@
+OUTPUT vtk=[0 500] backup=0 print=100 pasta=dropletOrifice-M[minDxDy]dt[dt]-Re[Re]Wi[We]beta[beta]Fr[Froude]Weber[Weber]
+CARTESIANO
+Nt 50000
+xMin -2.0
+xMax 2.0
+yMin -6.0
+yMax 1.5
+tMax 50
+Re 10
+Fr 9.207894499 grav=[0 -1]
+param_visco Wi=1 beta=1 alpha=0 epsilon=0
+FORMULACAO_VISCO CSF
+tolNSF 0 0 1
+tensao_superficial ligado=sim Weber=50 tsur=1
+VEL_INICIAL [0.0 -1.0]
+MALHA_EIXO_X tipo=geometrico vertices=(-2.0 -0.25 0.25 2.0) param_stretching=([140 0.0125 -1] [40 0.0125 1] [140 0.0125 1])
+MALHA_EIXO_Y tipo=geometrico vertices=(-6.0 -0.25 0.0 1.5) param_stretching=([460 0.0125 -1] [20 0.0125 -1] [120 0.0125 1])
+BOUNDARY id=0 direcao=horizontal posicao=0.0 inicio=-2.0 fim=-0.25 tipo=NOSLIP movimento=SEM_MOVIMENTO
+BOUNDARY id=1 direcao=horizontal posicao=-0.25 inicio=-2.0 fim=-0.25 tipo=NOSLIP movimento=SEM_MOVIMENTO
+BOUNDARY id=2 direcao=vertical posicao=-2.0 inicio=-0.25 fim=0.0 tipo=NOSLIP movimento=SEM_MOVIMENTO
+BOUNDARY id=3 direcao=vertical posicao=-0.25 inicio=-0.25 fim=0.0 tipo=NOSLIP movimento=SEM_MOVIMENTO
+BOUNDARY id=4 direcao=horizontal posicao=0.0 inicio=0.25 fim=2.0 tipo=NOSLIP movimento=SEM_MOVIMENTO
+BOUNDARY id=5 direcao=horizontal posicao=-0.25 inicio=0.25 fim=2.0 tipo=NOSLIP movimento=SEM_MOVIMENTO
+BOUNDARY id=6 direcao=vertical posicao=0.25 inicio=-0.25 fim=0.0 tipo=NOSLIP movimento=SEM_MOVIMENTO
+BOUNDARY id=7 direcao=vertical posicao=2.0 inicio=-0.25 fim=0.0 tipo=NOSLIP movimento=SEM_MOVIMENTO
+BOUNDARY id=8 direcao=horizontal posicao=1.5 inicio=-2 fim=2 tipo=NOSLIP movimento=SEM_MOVIMENTO
+BOUNDARY id=9 direcao=horizontal posicao=-6 inicio=-2 fim=2 tipo=NOSLIP movimento=SEM_MOVIMENTO
+BOUNDARY id=10 direcao=vertical posicao=-2 inicio=-6 fim=1.5 tipo=NOSLIP movimento=SEM_MOVIMENTO
+BOUNDARY id=11 direcao=vertical posicao=2 inicio=-6 fim=1.5 tipo=NOSLIP movimento=SEM_MOVIMENTO
+REGIAO_LIVRE tipo=elipse centro=[0.0 0.5] raio=[0.5 0.5] vel=[0.0 -1.0]
+REGIAO_PAREDE NumFaces=4 faces=0 3 1 2
+REGIAO_PAREDE NumFaces=4 faces=4 7 5 6
+BLOCO_PARAVIEW NumFaces=4 faces=0 3 1 2
+BLOCO_PARAVIEW NumFaces=4 faces=4 7 5 6

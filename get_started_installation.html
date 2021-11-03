@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script> -->
+
+
+<html lang="en">
+
+
+
+<head>
+
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Hugo França - Geração de Malhas 2019</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/shop-item.css" rel="stylesheet">
+
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Sem-Nome Flow</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="get_started_installation.html">Get started</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="documentation.html">Documentation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="publications.html">Publications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="developers.html">Developers</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container2">
+
+        <!-- <nav id="sidebar" class="col-lg-3"> -->
+        <nav id="sidebar" class="nav-sidebar">
+              <div class="sidebar-header">
+                  <h3>Get started</h3>
+              </div>
+
+              <ul class="list-unstyled components">
+                  
+                  <li>
+                      <a href="#installSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Installation</a>
+                      <ul class="collapse list-unstyled show" id="installSubmenu">
+                          <li>
+                              <a href="get_started_installation.html">Full installation</a>
+                          </li>
+                          <li>
+                              <a href="get_started_installation.html#card_install_petsc">Installing PETSc</a>
+                          </li>
+                          <li>
+                              <a href="get_started_installation.html#card_install_flow">Installing Sem-Nome Flow</a>
+                          </li>
+                          <li>
+                              <a href="get_started_installation.html#card_compile_flow">Compiling Sem-Nome Flow</a>
+                          </li>
+                          <li>
+                              <a href="get_started_installation.html#card_valgrind">Installing Valgrind</a>
+                          </li>
+                          <li>
+                              <a href="get_started_installation.html#card_running">Running a simulation</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li>
+                      <a href="#examplesSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Examples</a>
+                      <ul class="collapse list-unstyled" id="examplesSubmenu">
+                          <li>
+                              <a href="get_started_examples.html#card_channel_flow">Channel flow</a>
+                          </li>
+                          <li>
+                              <a href="get_started_examples.html#card_contraction_flow">Contraction flow</a>
+                          </li>
+                          <li>
+                              <a href="get_started_examples.html#card_gota_buraco">Droplet through orifice</a>
+                          </li>
+                          <li>
+                              <a href="get_started_examples.html#card_droplet_collision">Binary droplet collision</a>
+                          </li>
+                      </ul>
+                  </li>
+              </ul>
+        </nav>
+
+        <!-- <div class="col-lg-9"> -->
+        <div class="lado-direito">
+
+        <div class="card mt-4">
+          <div class="card-body">
+            <h1 class="card-title text-center">Installation</h1>
+            Follow the steps below to install Sem-Nome Flow.
+          </div>
+        </div>
+        <!-- /.card -->
+
+        <div id='card_install_petsc' class="card card-outline-secondary my-4">
+          <div class="card-header">
+            <b><h3>1. Installing PETSc</h3></b>
+          </div>
+          <div class="card-body">
+
+              Sem-Nome Flow requires the library PETSc to be compiled. You can install PETSc with the following steps:
+              <ol>
+                <li> Go to the <a href="https://petsc.org/release/download/">PETSc official page</a> and download the latest source tarball. </li>
+                <li> Extract the tarball using the command: </li>
+                <div class="usercommand">
+                  <pre>tar xf petsc-&ltversion number&gt.tar.gz</pre>
+                </div>
+                <li> Enter the folder that was created from the extraction. </li>
+                <div class="usercommand">
+                  <pre>cd petsc-&ltversion number&gt</pre>
+                </div>
+                <li> Run the PETSc configuration script with the command below. Note: if you are installing PETSc in a cluster system, you may need to execute this script directly inside the node where your simulations will be run in the future.</li>
+                <div class="usercommand">
+                  <pre>./configure --with-cc=gcc --with-cxx=0 --with-fc=0 --download-f2cblaslapack --download-mpich</pre>
+                </div>
+                <li> After the configuration (step 4) is done, the script will show you a command on the terminal to compile the code. Copy that command and run it. The command will be something similar (but maybe not exactly) to this:</li>
+                <div class="usercommand">
+                  <pre>make PETSC_DIR=/home/hugo/petsc-3.16.1 PETSC_ARCH=arch-linux-c-debug all</pre>
+                </div>
+              </ol>
+  
+          </div>
+        </div>
+        <!-- /.card -->
+
+        <div id='card_install_flow' class="card card-outline-secondary my-4">
+          <div class="card-header">
+            <b><h3>2. Installing Sem-Nome Flow</h3></b>
+          </div>
+          <div class="card-body">
+
+              To install Sem-None Flow, follow these steps:
+              <ol>
+                <li> Download the source code tarball clicking [here]. </li>
+                <li> Extract the tarball. </li>
+                <div class="usercommand">
+                  <pre>tar xf CodeFlow.tar.gz</pre>
+                </div>
+                <li> Enter the folder that was created from the extraction. </li>
+                <div class="usercommand">
+                  <pre>cd CodeFlow</pre>
+                </div>
+                <li> Open the file called "makefile" on your text editor of choice. Modify the line below and replace that path with the path corresponding to your PETSc folder.</li>
+                <div class="usercommand">
+                  <pre>PETSC_DIR=/home/hugo/petsc-3.16.1</pre>
+                </div>
+              </ol>
+  
+          </div>
+        </div>
+        <!-- /.card -->
+
+        <div id='card_compile_flow' class="card card-outline-secondary my-4">
+          <div class="card-header">
+            <b><h3>3. Compiling Sem-Nome Flow</h3></b>
+          </div>
+          <div class="card-body">
+
+              To compile Sem-None Flow, follow these steps:
+              <ol>
+                <li> Enter the folder with the source code (if you're not there yet). </li>
+                <div class="usercommand">
+                  <pre>cd CodeFlow</pre>
+                </div>
+                <li> Compile by running the command below. </li>
+                <div class="usercommand">
+                  <pre>make main</pre>
+                </div>
+              </ol>
+  
+          </div>
+        </div>
+        <!-- /.card -->
+
+        <div id='card_valgrind' class="card card-outline-secondary my-4">
+          <div class="card-header">
+            <b><h3>4. Installing Valgrind (optional)</h3></b>
+          </div>
+          <div class="card-body">
+
+            <p>
+              If you're going to make changes to the source code, it is highly recommended that you also install the debugging tool <b>Valgrind</b>. Valgrind will be extremely helpful at finding segmentation faults or memory access bugs that you may have introduced during your programming. Whenever you get an error, run the program with Valgrind and it will likely tell you exactly where the error is coming from.
+            </p>
+
+            <p>
+              To install Valgrind, you can use the command below.
+              <div class="usercommand">
+                <pre>sudo apt-get install valgrind</pre>
+              </div>
+            </p>
+
+  
+          </div>
+        </div>
+        <!-- /.card -->
+
+         <div id='card_running' class="card card-outline-secondary my-4">
+          <div class="card-header">
+            <b><h3>5. Running a simulation</h3></b>
+          </div>
+          <div class="card-body">
+
+            <p>
+              After installing and compiling the code through the steps above, you can run a simulation. To run a simulation you will need a simulation (SIM) file, which contains all the parameters and geometry to be used. Check the examples page to learn how to create a SIM file.
+            </p>
+
+            <p>
+              After you have your desired SIM file, you can run the simulation with the command below. Replace simulation_file with the name of your SIM file.
+              <div class="usercommand">
+                <pre>./main -pc_type lu -arquivo simulation_file.sim</pre>
+              </div>
+            </p>
+
+  
+          </div>
+        </div>
+        <!-- /.card -->
+
+    </div>
+
+
+
+  </div>
+  <!-- /.container -->
+
+  <!-- <br> -->
+  <!-- <br> -->
+  <!-- Footer -->
+  <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom"> -->
+    <!-- <div class="container"> -->
+      <!-- <p class="m-0 text-center text-white">Hugo França, 2019</p> -->
+    <!-- </div> -->
+    <!-- /.container -->
+  <!-- </nav> -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- <script src="bootstrap/js/jquery.js"></script>
+  <script src="bootstrap/js/bootstrap-alert.js"></script>
+  <script src="bootstrap/js/bootstrap-modal.js"></script>
+  <script src="bootstrap/js/bootstrap-transition.js"></script>
+  <script src="bootstrap/js/bootstrap-tooltip.js"></script> -->
+
+  <script type="text/javascript">
+    $(function () {
+        $("[data-toggle='tooltip']").tooltip();
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+OUTPUT vtk=[5000 0] backup=0 print=10 pasta=folderContraction-M[minDxDy]dt[dt]Re[Re]Wi[We]beta[beta]
+CARTESIANO
+Nt 100000
+xMin 0.0
+xMax 40
+yMin 0.0
+yMax 8
+tMax 10.0
+Re 0.01
+Fr 14.27843123 grav=[0.0 -1.0]
+param_visco Wi=1.0 beta=0.111111 alpha=0.0 epsilon=0.0
+FORMULACAO_VISCO CSF
+tolNSF 0 0 1
+tensao_superficial ligado=nao Weber=100.0 tsur=1
+VEL_INICIAL [0.0 0.0]
+MALHA_EIXO_X tipo=geometrico vertices=(0.0 20 40) param_stretching=([95 0.008 -1] [95 0.008 1])
+MALHA_EIXO_Y tipo=geometrico vertices=(0.0 1.5 3 4 5 6.5 8) param_stretching=([45 0.008 1] [45 0.008 -1] [40 0.008 1] [40 0.008 -1] [45 0.008 1] [45 0.008 -1])
+BOUNDARY id=0 direcao=horizontal posicao=0.0 inicio=0.0 fim=20 tipo=NOSLIP movimento=SEM_MOVIMENTO
+BOUNDARY id=1 direcao=horizontal posicao=8.0 inicio=0.0 fim=20 tipo=NOSLIP movimento=SEM_MOVIMENTO
+BOUNDARY id=2 direcao=horizontal posicao=3.0 inicio=20 fim=40 tipo=NOSLIP movimento=SEM_MOVIMENTO
+BOUNDARY id=3 direcao=horizontal posicao=5.0 inicio=20 fim=40 tipo=NOSLIP movimento=SEM_MOVIMENTO
+BOUNDARY id=4 direcao=vertical posicao=0.0 inicio=0.0 fim=8.0 tipo=INFLOW perfil=parabolico valorDirichlet=0.375
+BOUNDARY id=5 direcao=vertical posicao=40.0 inicio=3 fim=5 tipo=NEUMANN
+BOUNDARY id=6 direcao=vertical posicao=20.0 inicio=0.0 fim=3.0 tipo=NOSLIP movimento=SEM_MOVIMENTO
+BOUNDARY id=7 direcao=vertical posicao=20.0 inicio=5.0 fim=8.0 tipo=NOSLIP movimento=SEM_MOVIMENTO
+REGIAO tipo=FULL numFaces=8 faces=0 1 2 3 4 5 6 7

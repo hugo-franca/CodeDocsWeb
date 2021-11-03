@@ -1,0 +1,56 @@
+<code>OUTPUT vtk=[<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='How often (in timesteps) a VTK file will be printed with all the properties on the whole mesh. This file can be really large for extremely fine meshes, be careful.
+'>0</span> <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='How often (in timesteps) a VTK file will be printed with the free-surface interface. Ignored in simulations with no interface.
+'>2000</span>] backup=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='This is for debugging only. Keep this as 0 if you are unsure. This property prints a save-state file every few timesteps. A simulation can be later restarted from this state, instead of re-running from the beginning.
+'>0</span> print=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='How often (in timesteps) a string with some information will be printed to stdout.
+'>100</span> pasta=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The name of the folder in which the VTK files will be saved. Some tags can be used in this string.
+'>dropletCollision-M[minDxDy]dt[dt]-We[Weber]Re[Re]epsilon[epsilon]Wi[We]</span></code>
+<code><span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The coordinate system in the simulation. Do not change this property for now. In the future an axisymmetric option will be implemented as well.
+'>CARTESIANO</span></code>
+<code>Nt <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The total number of timesteps for the simulation. The timestep size will be calculated as dt = tMax/Nt.
+'>500000</span></code>
+<code>xMin <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The minimum value of x for the domain bounding rectangle.
+'>-5.0</span></code>
+<code>xMax <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The maximum value of x for the domain bounding rectangle.
+'>5.0</span></code>
+<code>yMin <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The minimum value of y for the domain bounding rectangle.
+'>-5.0</span></code>
+<code>yMax <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The maximum value of y for the domain bounding rectangle.
+'>5.0</span></code>
+<code>tMax <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The final time of the simulation. The timestep size will be calculated as dt = tMax/Nt.
+'>25</span></code>
+<code>Re <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The Reynolds number for the simulation.
+'>133.5822675</span></code>
+<code>Fr <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The Froude number for the simulation.
+'>1</span> grav=[<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The x-component for the gravity vector.
+'>0</span> <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The y-component for the gravity vector.
+'>0</span>]</code>
+<code>param_visco Wi=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The Weissenberg number for viscoelastic simulations.
+'>3</span> beta=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The viscosity ratio for viscoelastic simulations. Use beta=1 for newtonian.
+'>0.111111</span> alpha=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The additional parameter for the viscoelastic Giesekus model.
+'>0</span> epsilon=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The additional parameter for the viscoelastic PTT model.
+'>0.25</span></code>
+<code>formulacao_visco <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The viscoelastic formulation to be used. Either CSF or NSF. Choose CSF if you&#39re unsure.
+'>CSF</span></code>
+<code>tolNSF <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The first tolerance for the NSF formulation. This is ignored if you chose CSF on the line above.
+'>1e-6</span> <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The second tolerance for the NSF formulation. This is ignored if you chose CSF on the line above.
+'>0.0</span> <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The third tolerance for the NSF formulation. This is ignored if you chose CSF on the line above.
+'>1</span></code>
+<code>tensao_superficial ligado=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='Determines if surface tension will be used or not. Either sim or nao. This is ignored for simulations with no free-surface.
+'>sim</span> Weber=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The Weber number. Only used in simulations with free-surface.
+'>70</span> tsur=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='How often (in timesteps) the TSUR algorithm will be applied. Higher values mean TSUR will be apllied LESS frequently.
+'>1</span></code>
+<code>VEL_INICIAL [<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The x-component for the initial velocity. The entire fluid domain is initialized with this.
+'>0.0</span> <span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The y-component for the initial velocity. The entire fluid domain is initialized with this.
+'>0.0</span>]</code>
+<code>MALHA_EIXO_X tipo=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='Indicates that a uniform discretization will be used for this coordinate.
+'>uniforme</span> N=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The number of cells in the x-direction. In a uniform mesh, the spacing will be dx=(xMax-xMin)/Nx
+'>400</span></code>
+<code>MALHA_EIXO_Y tipo=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='Indicates that a uniform discretization will be used for this coordinate.
+'>uniforme</span> N=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The number of cells in the x-direction. In a uniform mesh, the spacing will be dy=(yMax-yMin)/Ny
+'>400</span></code>
+<code>REGIAO_LIVRE tipo=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The REGIAO_LIVRE line is used to create a free surface region. This parameter defines which pre-defined shape the region will have, in this case it is the binary droplet collision shape.
+'>COLISAO_DUAS_GOTAS</span> centro_base=[<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The coordinates for the point of impact.
+'>0.0 0.0</span>] raios=[<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The radius of each droplet (they are both perfect circles).
+'>0.5 0.5</span>] B=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The impact parameter B. Look for a reference on binary droplet collisions to know what this is.
+'>0.3</span> distancia=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='The distance the droplets will travel before impact. Can usually be left as 0.
+'>0.5</span> merge_time=<span class='codetooltip' data-toggle='tooltip' data-placement='top' data-animation='false' title='A numerical parameter used to forcefully delay coalescence. Keep it as 0 for now.'>0.0</span></code>

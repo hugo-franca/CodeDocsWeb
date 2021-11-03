@@ -1,0 +1,123 @@
+output_fields = How often (in timesteps) a VTK file will be printed with all the properties on the whole mesh. This file can be really large for extremely fine meshes, be careful.
+
+output_interface = How often (in timesteps) a VTK file will be printed with the free-surface interface. Ignored in simulations with no interface.
+
+output_backup = This is for debugging only. Keep this as 0 if you are unsure. This property prints a save-state file every few timesteps. A simulation can be later restarted from this state, instead of re-running from the beginning.
+
+output_print = How often (in timesteps) a string with some information will be printed to stdout.
+
+output_folder = The name of the folder in which the VTK files will be saved. Some tags can be used in this string.
+
+coordinate_system = The coordinate system in the simulation. Do not change this property for now. In the future an axisymmetric option will be implemented as well.
+
+Nt = The total number of timesteps for the simulation. The timestep size will be calculated as dt = tMax/Nt.
+
+xMin = The minimum value of x for the domain bounding rectangle.
+
+xMax = The maximum value of x for the domain bounding rectangle.
+
+yMin = The minimum value of y for the domain bounding rectangle.
+
+yMax = The maximum value of y for the domain bounding rectangle.
+
+tMax = The final time of the simulation. The timestep size will be calculated as dt = tMax/Nt.
+
+Re = The Reynolds number for the simulation.
+
+Fr = The Froude number for the simulation.
+
+gravx = The x-component for the gravity vector.
+
+gravy = The y-component for the gravity vector.
+
+Wi = The Weissenberg number for viscoelastic simulations.
+
+beta = The viscosity ratio for viscoelastic simulations. Use beta=1 for newtonian.
+
+alpha = The additional parameter for the viscoelastic Giesekus model.
+
+epsilon = The additional parameter for the viscoelastic PTT model.
+
+formulacao_visco = The viscoelastic formulation to be used. Either CSF or NSF. Choose CSF if you&#39re unsure.
+
+tolNSF_0 = The first tolerance for the NSF formulation. This is ignored if you chose CSF on the line above.
+
+tolNSF_1 = The second tolerance for the NSF formulation. This is ignored if you chose CSF on the line above.
+
+tolNSF_2 = The third tolerance for the NSF formulation. This is ignored if you chose CSF on the line above.
+
+tensao_ligado = Determines if surface tension will be used or not. Either sim or nao. This is ignored for simulations with no free-surface.
+
+Weber = The Weber number. Only used in simulations with free-surface.
+
+tsur = How often (in timesteps) the TSUR algorithm will be applied. Higher values mean TSUR will be apllied LESS frequently.
+
+vel_x = The x-component for the initial velocity. The entire fluid domain is initialized with this.
+
+vel_y = The y-component for the initial velocity. The entire fluid domain is initialized with this.
+
+mesh_uniform = Indicates that a uniform discretization will be used for this coordinate.
+
+mesh_uniform_Nx = The number of cells in the x-direction. In a uniform mesh, the spacing will be dx=(xMax-xMin)/Nx
+
+mesh_uniform_Ny = The number of cells in the x-direction. In a uniform mesh, the spacing will be dy=(yMax-yMin)/Ny
+
+mesh_geometrico = Indicates that a non-uniform stretching discretization will be used for this coordinate.
+
+mesh_geom_vertices = The vertices for this stretching discretization. Read the explanation above for more details.
+
+mesh_geom_parameters = The parameters to be used in one of the stretching subgroups.
+
+boundary_id = An ID number that identifies this boundary. Each boundary should have a unique ID.
+
+direction_vertical = Either horizontal or vertical. Each boundary is either a horizontal or vertical straight line, as indicated by this property.
+
+direction_horizontal = Either horizontal or vertical. Each boundary is either a horizontal or vertical straight line, as indicated by this property.
+
+position_vertical = The position of this boundary line. In this case, we have a vertical line, so this position corresponds to the $x$-coordinate of this line.
+
+position_horizontal = The position of this boundary line. In this case we have a horizontal line, so this position corresponds to the $y$-coordinate of this line.
+
+inicio_horizontal = The initial limit of this boundary line segment. In this case we have a horizontal line, so this position correspods to the minimum value of $x$ in the line segment.
+
+inicio_vertical = The initial limit of this boundary line segment. In this case we have a vertical line, so this position correspods to the minimum value of $y$ in the line segment.
+
+fim_horizontal = The final limit of this boundary line segment. In this case we have a horizontal line, so this position correspods to the minimum value of $x$ in the line segment.
+
+fim_vertical = The final limit of this boundary line segment. In this case we have a vertical line, so this position correspods to the minimum value of $y$ in the line segment.
+
+tipo = The type of boundary condition to be applied at this line segment. Can be either NOSLIP, INFLOW or NEUMANN.
+
+perfil = Type of profile for the inflow condition. Can be either reto or parabolico.
+
+valorDirichlet = Velocity value to be applied at this inflow boundary.
+
+movimento_noslip = Indicates if this NOSLIP boundary moves or not. Keep it as SEM_MOVIMENTO for now. An example with movement will be added in the future.
+
+regiao_tipo = A region is a closed polygon with all cells having a fixed type. This property is the type for this region&#39s cells.
+
+regiao_numfaces = Number of faces in this polygon.
+
+regiao_idface = List of face IDs for this polygon. These IDs should match the ones defined with the boundaries above.
+
+regiao_livre_tipo_elipse = The REGIAO_LIVRE line is used to create a free surface region. This parameter defines which pre-defined shape the region will have, in this case it is an ellipse. More examples will be created later showcasing more shapes.
+
+regiao_elipse_centro = The two coordinates of the ellipse center.
+
+regiao_elipse_raio = The radiuses of the ellipse.
+
+regiao_elipse_veloc = The velocity for the ellipse to be initialized with.
+
+regiao_parede_numfaces = The REGIAO_PAREDE line creates a polygon that will be treated as a solid block. No fluid can enter this block. This parameter indicates the number of faces in the polygon.
+
+regiao_livre_tipo_binary = The REGIAO_LIVRE line is used to create a free surface region. This parameter defines which pre-defined shape the region will have, in this case it is the binary droplet collision shape.
+
+regiao_binary_center = The coordinates for the point of impact.
+
+regiao_binary_raios = The radius of each droplet (they are both perfect circles).
+
+regiao_binary_distancia = The distance the droplets will travel before impact. Can usually be left as 0.
+
+regiao_binary_B = The impact parameter B. Look for a reference on binary droplet collisions to know what this is.
+
+regiao_binary_mergetime = A numerical parameter used to forcefully delay coalescence. Keep it as 0 for now.

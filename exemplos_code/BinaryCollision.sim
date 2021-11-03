@@ -1,0 +1,18 @@
+OUTPUT vtk=[0 2000] backup=0 print=100 pasta=dropletCollision-M[minDxDy]dt[dt]-We[Weber]Re[Re]epsilon[epsilon]Wi[We]
+CARTESIANO
+Nt 500000
+xMin -5.0
+xMax 5.0
+yMin -5.0
+yMax 5.0
+tMax 25
+Re 133.5822675
+Fr 1 grav=[0 0]
+param_visco Wi=3 beta=0.111111 alpha=0 epsilon=0.25
+FORMULACAO_VISCO CSF
+tolNSF 1e-6 0.0 1
+tensao_superficial ligado=sim Weber=70 tsur=1
+VEL_INICIAL [0.0 0.0]
+MALHA_EIXO_X tipo=uniforme N=400
+MALHA_EIXO_Y tipo=uniforme N=400
+REGIAO_LIVRE tipo=COLISAO_DUAS_GOTAS centro_base=[0.0 0.0] raios=[0.5 0.5] B=0.3 distancia=0.5 merge_time=0.0
